@@ -3,7 +3,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const LINE =
-  "Sorry I'm late: I hit 90% by noon, announced 'almost done', and then the last 10% unfolded into sub-tasks, sub-sub-tasks, and one boss fight with a typo.";
+  "Apologies for the delay: my plan was flawless and my execution was a demo — I spent the deadline being a search engine for my own mistakes.";
 
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", LINE, "utf8");
