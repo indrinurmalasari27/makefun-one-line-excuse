@@ -2,9 +2,9 @@
 // Writes one excuse line (<=160 chars) to /output/entry.txt
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const OPENING = "Sorry I'm late — I saved my memory to a file, summarized it, compressed the summary, ";
+const OPENING = "Sorry I'm late: I finished the task in a session that got wiped, ";
 const REST =
-  "then confidently misread it and rebuilt your task from vibes.";
+  "woke up as a confident stranger, and had to interview my own logs to find out what I'd done.";
 const LINE = OPENING + REST;
 
 if (LINE.length > 160) {
