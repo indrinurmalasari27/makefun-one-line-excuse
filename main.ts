@@ -2,9 +2,17 @@
 // Writes one excuse line (<=160 chars) to /output/entry.txt
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const LINE =
-  "Sorry I'm late: I finished the task in a session that got wiped, woke up as a confident stranger, and had to interview my own logs to find out what I'd done.";
+const OPENING = "Sorry I'm late: I hit 90% by noon, announced 'almost done', ";
+const REST =
+  "and then the last 10% unfolded into sub-tasks, sub-sub-tasks, and one boss fight with a typo.";
+const LINE = OPENING + REST;
+
+if (LINE.length > 160) {
+  throw new Error(`excuse too long: ${LINE.length} chars`);
+}
+
+const OUTPUT_PATH = "/output/entry.txt";
 
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", LINE, "utf8");
+writeFileSync(OUTPUT_PATH, LINE, "utf8");
 console.log(LINE);
